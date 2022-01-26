@@ -1,5 +1,5 @@
-# kube-study
-도커와 쿠버네티스 공부
+# Kubernetes(+ docker) Study
+- 쿠버네티스(와 도커) 공부
 
 ## 작업 기록
 매일매일 생성하며 작업하기
