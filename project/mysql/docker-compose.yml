@@ -1,0 +1,21 @@
+# Use root/example as user/password credentials
+version: '3.8'
+
+services:
+  mysql:
+    platform: linux/x86_64
+    image: mysql:8.0.28
+    container_name: mysql-8.0.28
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: rgbplace
+      MYSQL_DATABASE: user
+      TZ: Asia/Seoul
+  adminer:
+    image: adminer
+    container_name: adminer
+    #restart: always
+    ports:
+      - 8081:8081
