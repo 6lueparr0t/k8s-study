@@ -17,6 +17,7 @@
 |2022-01-31|kind 설치|[3-1. 쿠버네티스 환경 선택](https://blog.rgbplace.com/412)|
 |2022-02-06|GKE 셋팅|[3-2. GKE 환경 셋팅](https://blog.rgbplace.com/413)|
 |2022-02-13|도커 복습|[1. 도커 복습](https://blog.rgbplace.com/408)|
+|2022-02-14|GKE 셋팅2|[4-1. GCP 에서 다시 한번 환경 설정](https://blog.rgbplace.com/417)|
 
 [쿠버네티스 완벽 가이드]: https://www.google.com/search?q=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&oq=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&aqs=chrome..69i57.4917j0j7&sourceid=chrome&ie=UTF-8
 
