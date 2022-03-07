@@ -23,6 +23,8 @@
 |2022-02-27|kubectl 사용법 (2/2)|[4-3. kubectl (2/2)](https://blog.rgbplace.com/424)|
 |2022-03-03|쿠버네티스 자격증 관련 정보|[\[CKAD\] section 1. Introduction](https://blog.rgbplace.com/425)|
 |2022-03-04|쿠버네티스 컴포넌트 정리|[\[CKAD\] section 2. Core Concepts (1)](https://blog.rgbplace.com/426)|
+|2022-03-07|파드(pod)와 YAML 에 대해|[\[CKAD\] section 2. Core Concepts (2)](https://blog.rgbplace.com/427)|
+|2022-03-08|Pods 테스트|[\[CKAD\] section 2. Practice Test (KodeKloud)](https://blog.rgbplace.com/428)|
 
 [쿠버네티스 완벽 가이드]: https://www.google.com/search?q=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&oq=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&aqs=chrome..69i57.4917j0j7&sourceid=chrome&ie=UTF-8
 
