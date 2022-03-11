@@ -13,7 +13,7 @@
 |날짜|내용|링크|
 |:---|:---|:---|
 |2022-01-14 ~ 2022-01-22|도커 셋팅 및 튜토리얼 작성 후 정리|[0. Docker Tutorial 다시 보기](https://blog.rgbplace.com/406)|
-|2022-01-31|도커 이미지 종류, 명령어<br>쿠버네티스 개요|[2. 쿠버네티스 소개](https://blog.rgbplace.com/411)|
+|2022-01-31|도커 이미지 종류, 명령어 & 쿠버네티스 개요|[2. 쿠버네티스 소개](https://blog.rgbplace.com/411)|
 |2022-01-31|kind 설치|[3-1. 쿠버네티스 환경 선택](https://blog.rgbplace.com/412)|
 |2022-02-06|GKE 셋팅|[3-2. GKE 환경 셋팅](https://blog.rgbplace.com/413)|
 |2022-02-13|도커 복습|[1. 도커 복습](https://blog.rgbplace.com/408)|
