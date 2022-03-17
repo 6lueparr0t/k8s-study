@@ -9,4 +9,6 @@ spec:
   - image: ubuntu-sleeper
     name: ubuntu-sleeper
     imagePullPolicy: Never
-    args: ["10"]
+    command:
+    - "sleep"
+    - "3600"
