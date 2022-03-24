@@ -3,12 +3,13 @@
 - 쿠버네티스(와 도커) 공부
 - [쿠버네티스 완벽 가이드] 로 공부 중
 - [소스 코드] URL
+- 하다보니 [Udemy] 보며 CKAD 준비 중 (15,000원 일때 사자)
 
 ## 작업 기록
 
 매일매일 생성하며 작업하기
 
-### **2022년 1월**
+### 블로그 링크 정리
 
 |날짜|내용|링크|
 |:---|:---|:---|
@@ -31,7 +32,9 @@
 |2022-03-17|민감정보 저장 & 컨테이너 설정|[\[CKAD\] section 3. Configuration (2) - Secret & Security Contexts](https://blog.rgbplace.com/432)|
 |2022-03-20|SA, Resource, Taints & Toleration|[\[CKAD\] section 3. Configuration (3) - SA, Resource, Taints & Toleration](https://blog.rgbplace.com/433)|
 |2022-03-21|Node Selectors & Node Affinity|[\[CKAD\] section 3. Configuration (4) - Node Selectors & Node Affinity](https://blog.rgbplace.com/434)|
+|2022-03-24|시험 팁 정리|[\[CKAD\] 2022년 시험 팁 정리](https://blog.rgbplace.com/435)|
 
 [쿠버네티스 완벽 가이드]: https://www.google.com/search?q=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&oq=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&aqs=chrome..69i57.4917j0j7&sourceid=chrome&ie=UTF-8
 
 [소스 코드]: https://github.com/MasayaAoyama/kubernetes-perfect-guide
+[Udemy]: https://www.udemy.com/course/certified-kubernetes-application-developer/
