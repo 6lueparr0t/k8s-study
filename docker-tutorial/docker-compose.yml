@@ -4,6 +4,7 @@ services:
   app:
     image: node:12-alpine
     container_name: getting-started-on-mac
+    # platform: linux/amd64
     command: sh -c "apk add --no-cache python2 g++ make && yarn install && yarn run dev"
     ports:
       - 3000:3000
@@ -19,6 +20,7 @@ services:
   mysql:
     image: mysql:5.7
     container_name: mysql-5.7
+    # platform: linux/amd64
     volumes:
       - todo-mysql-data:/var/lib/mysql
     environment: 
