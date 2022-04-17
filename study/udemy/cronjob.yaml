@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: reporting-cron-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      completions: 3
+      parallelism: 3 # 병렬 처리
+      template:
+        spec:
+          containers:
+          - name: math-add
+            image: ubuntu
+            command: ['expr', '3', '+', '2']

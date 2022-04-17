@@ -2,13 +2,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    run: ubuntu-sleeper-pod
-  name: ubuntu-sleeper-pod
+    run: ubuntu-pod
+  name: ubuntu-pod
 spec:
   containers:
-  - image: ubuntu-sleeper
-    name: ubuntu-sleeper
-    imagePullPolicy: Never
+  - image: ubuntu:latest
+    name: ubuntu-pod
+    # imagePullPolicy: Never
+    imagePullPolicy: Always
     command:
     - "sleep"
     - "3600"
