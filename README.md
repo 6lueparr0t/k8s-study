@@ -37,6 +37,7 @@
 |2022-04-07|Observability|[\[CKAD\] section 5. Observability](https://blog.rgbplace.com/437)|
 |2022-04-12|POD Design (1)|[\[CKAD\] section 6. POD Design (1) - Labels & Rolling Update](https://blog.rgbplace.com/440)|
 |2022-04-17|POD Design (2)|[\[CKAD\] section 6. POD Design (2) - Job & CronJob](https://blog.rgbplace.com/441)|
+|2022-04-28|Services (1)|[\[CKAD\] section 7. Services (1)](https://blog.rgbplace.com/444)|
 
 [쿠버네티스 완벽 가이드]: https://www.google.com/search?q=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&oq=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&aqs=chrome..69i57.4917j0j7&sourceid=chrome&ie=UTF-8
 
