@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ingress
+  name: ingress
+  namespace: ingress-space
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 30080
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    name: nginx-ingress
+  type: NodePort
+status:
+  loadBalancer: {}
