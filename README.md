@@ -40,6 +40,7 @@
 |2022-04-28|Services (1)|[\[CKAD\] section 7. Services (1)](https://blog.rgbplace.com/444)|
 |2022-04-30|Ingress (2)|[\[CKAD\] section 7. Ingress (2)](https://blog.rgbplace.com/445)|
 |2022-05-01|Network Policy (3)|[\[CKAD\] section 7. Network Policy (3)](https://blog.rgbplace.com/446)|
+|2022-05-03|Volume|[\[CKAD\] section 8. Volume & Persistent Volume & Persistent Volume Claim](https://blog.rgbplace.com/448)|
 
 [쿠버네티스 완벽 가이드]: https://www.google.com/search?q=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&oq=%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C&aqs=chrome..69i57.4917j0j7&sourceid=chrome&ie=UTF-8
 

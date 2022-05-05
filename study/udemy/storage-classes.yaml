@@ -1,0 +1,17 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"portworx-io-priority-high"},"parameters":{"priority_io":"high","repl":"1","snap_interval":"70"},"provisioner":"kubernetes.io/portworx-volume"}
+  creationTimestamp: "2022-05-05T18:15:38Z"
+  name: portworx-io-priority-high
+  resourceVersion: "774"
+  uid: 0f1c1ee9-0a5c-4f25-885d-b3fa52537840
+parameters:
+  priority_io: high
+  repl: "1"
+  snap_interval: "70"
+provisioner: kubernetes.io/portworx-volume
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
