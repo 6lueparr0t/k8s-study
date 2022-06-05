@@ -1,0 +1,30 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: "2022-06-05T17:21:34Z"
+  name: developer
+  namespace: blue
+  resourceVersion: "3887"
+  uid: c38b524e-7683-43c2-8deb-db1049492c59
+rules:
+# 여러개의 apiGroups 를 가질 수 있다.
+- apiGroups:
+  - apps
+  resourceNames:
+  - dark-blue-app
+  resources:
+  - pods
+  verbs:
+  - get
+  - watch
+  - create
+  - delete
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - get
+  - watch
+  - create
+  - delete
