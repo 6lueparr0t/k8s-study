@@ -13,3 +13,10 @@ spec:
       volumeMounts:
         - mountPath: /var/www/html
           name: nginx-volume
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests:
+          memory: 128Mi
+          cpu: "0.2"

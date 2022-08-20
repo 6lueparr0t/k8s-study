@@ -17,6 +17,13 @@ spec:
       serviceAccountName: ingress-serviceaccount
       containers:
         - name: nginx-ingress-controller
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 128Mi
+              cpu: "0.2"
           image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.21.0
           args:
             - /nginx-ingress-controller

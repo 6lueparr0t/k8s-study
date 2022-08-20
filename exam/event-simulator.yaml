@@ -9,9 +9,23 @@ spec:
   containers:
   - image: kodekloud/event-simulator
     name: event-simulator1
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: "1"
+      requests:
+        memory: 128Mi
+        cpu: "0.2"
     # 해당 설정은 로컬 이미지를 사용하여 파드를 만들 수 있게 한다.
     # imagePullPolicy: Never
   - image: kodekloud/event-simulator
     name: event-simulator2
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: "1"
+      requests:
+        memory: 128Mi
+        cpu: "0.2"
     # 해당 설정은 로컬 이미지를 사용하여 파드를 만들 수 있게 한다.
     # imagePullPolicy: Never

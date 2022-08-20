@@ -31,6 +31,13 @@ spec:
         port: 8080
       initialDelaySeconds: 80
       periodSeconds: 1
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: "1"
+      requests:
+        memory: 128Mi
+        cpu: "0.2"
   serviceAccount: default
   serviceAccountName: default
   tolerations:
