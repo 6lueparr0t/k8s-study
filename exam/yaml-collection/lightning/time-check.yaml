@@ -1,0 +1,29 @@
+# kubectl -n dvl1987 exec time-check env | grep TIME
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: time-check
+  name: time-check
+  namespace: dvl1987
+spec:
+  containers:
+  - image: busybox
+    name: time-check
+    env:
+    - name: TIME_FREQ
+      valueFrom:
+        configMapKeyRef:
+          name: time-config
+          key: TIME_FREQ
+    command: 
+    - "/bin/sh"
+    - "-c"
+    - "while true; do date; sleep $TIME_FREQ; done > /opt/time/time-check.log"
+    volumeMounts:
+    - mountPath: /opt/time
+      name: time-volume
+  volumes:
+  - name: time-volume
+    emptyDir: {}
