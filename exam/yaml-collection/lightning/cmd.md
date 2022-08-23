@@ -25,8 +25,8 @@ spec:
   ingress:
   - from:
     - podSelector:
-      matchLabels:
-        name: webapp-color
+        matchLabels:
+          name: webapp-color
 ```
 
 
