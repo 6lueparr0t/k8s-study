@@ -3,6 +3,9 @@
 ```bash
 kubectl exec -it webapp-color -- sh
 
+# -z : 포트스캔
+# -v : verbose
+# -w : timeout [sec]
 nc -z -v secure-service 80
 
 nc -z -v -w 1 secure-service 80
