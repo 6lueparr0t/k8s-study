@@ -28,7 +28,6 @@ k set image deployment/[deployment-name] [pods]=[image]
 ex) k set image deployment/nginx-deployment nginx=nginx:1.17
 k rollout history deployment [deployment-name]
 k rollout undo deployment [deployment-name]
-k rollout undo deployment [deployment-name]
 k rollout undo deployment [deployment-name] --to-revision=2
 
 

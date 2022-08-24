@@ -31,8 +31,13 @@ spec:
 
 
 ```bash
-
 k -n dvl1987 create configmap time-config --from-literal=TIME_FREQ=10
 
 k run time-check --image=busybox --dry-run -o yaml > pod.yaml
+
+k create ns dvl1987
+
+k rollout history deployment [deployment-name]
+k rollout undo deployment [deployment-name]
+k rollout undo deployment [deployment-name] --to-revision=2
 ```
