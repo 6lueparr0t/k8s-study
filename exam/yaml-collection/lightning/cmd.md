@@ -39,5 +39,5 @@ k create ns dvl1987
 
 k rollout history deployment [deployment-name]
 k rollout undo deployment [deployment-name]
-k rollout undo deployment [deployment-name] --to-revision=2
+k rollout undo deployment [deployment-name] --to-revision=1
 ```
