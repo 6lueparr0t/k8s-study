@@ -30,9 +30,27 @@ k rollout history deployment [deployment-name]
 k rollout undo deployment [deployment-name]
 k rollout undo deployment [deployment-name] --to-revision=2
 
-
 k scale deployment frontend --replicas=0
 k scale deployment frontend-v2 --replicas=5
+
+# Imperative Commands
+k run nginx-pod --image=nginx:alpine
+k run redis -l tier=db --image=redis:alpine
+k run redis --image=redis:alpine --dry-run=client -o yaml > redis.yaml
+k expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml > redis-service.yaml
+k create deployment webapp --image=kodekloud/webapp-color --replicas=3
+k run custom-nginx --image=nginx --port=8080
+k create namespace dev-ns
+k create ns dev-ns
+k create deploy redis-deploy -n dev-ns --image=redis --replicas=2
+k run httpd --image=httpd:alpine --port=80 --expose
+k replace -f webapp-color-yaml --force
+k create cm cm-3392845 --from-literal=DB_NAME=SQL3322 --from-literal=DB_HOST=sql322.mycompany.com --from-literal=DB_PORT=3306
+k create secret generic db-secret-xxdf --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123
+k logs e-com-1123 -n e-commerce > /opt/outputs/e-com-1123.logs
+k create deploy redis --image=redis:alpine --dry-run=client -o yaml > redis-deploy.yaml
+k expose deploy redis --name=redis --port=6379 --target-port=6379 --dry-run=client -o yaml > redis-svc.yaml
+k expose deploy redis --name=messaging-service --port=6379 -n marketing
 
 # Helm 명령어
 helm --help
@@ -47,10 +65,10 @@ helm uninstall [name]
 
 helm pull --untar [helm-charts] #다운로드 후 압축 풀기
 helm install [name] . # value.yaml 설정 후 helm-charts 띄우기
-
 ```
 
 ## Reference
 - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 - https://www.studytonight.com/post/how-to-list-all-resources-in-a-kubernetes-namespace
 - https://github.com/bitnami/charts/tree/master/bitnami/apache/#installing-the-chart
+- https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
