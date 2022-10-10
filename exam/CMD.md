@@ -14,6 +14,8 @@ k get all -n [namespace]
 
 k get namespaces # 네임스페이스 리스트
 k get all --all-namespaces # 모든 네임스페이스에서 조회
+k get pod -o wide # 넓게 보기
+k get node controlplane --show-labels # 노드의 라벨 확인하기
 
 # 리소스 생성 (with yaml)
 k create -f some.yaml
@@ -51,6 +53,10 @@ k logs e-com-1123 -n e-commerce > /opt/outputs/e-com-1123.logs
 k create deploy redis --image=redis:alpine --dry-run=client -o yaml > redis-deploy.yaml
 k expose deploy redis --name=redis --port=6379 --target-port=6379 --dry-run=client -o yaml > redis-svc.yaml
 k expose deploy redis --name=messaging-service --port=6379 -n marketing
+k taint node node01 app_type=alpha:NoSchedule
+k label node controlplane app_type=beta
+k create ingress ingress --rule="ckad-mock-exam-solution.com/video*=my-video-service:8080" --dry-run=client -o yaml > ingress.yaml
+k replace -f pod-with-rprobe.yaml --force
 
 # Helm 명령어
 helm --help
