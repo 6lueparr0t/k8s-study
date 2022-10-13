@@ -53,10 +53,13 @@ k logs e-com-1123 -n e-commerce > /opt/outputs/e-com-1123.logs
 k create deploy redis --image=redis:alpine --dry-run=client -o yaml > redis-deploy.yaml
 k expose deploy redis --name=redis --port=6379 --target-port=6379 --dry-run=client -o yaml > redis-svc.yaml
 k expose deploy redis --name=messaging-service --port=6379 -n marketing
+k create deploy my-webapp --image=nginx --replicas=2 --dry-run=client -o yaml > my-webapp.yaml
+k expose deployment my-webapp --name front-end-service --type NodePort --port 80 --dry-run=client -o yaml > front-end-service.yaml
 k taint node node01 app_type=alpha:NoSchedule
 k label node controlplane app_type=beta
 k create ingress ingress --rule="ckad-mock-exam-solution.com/video*=my-video-service:8080" --dry-run=client -o yaml > ingress.yaml
 k replace -f pod-with-rprobe.yaml --force
+k create job --image=docker/whalesay whalesay --dry-run=client -o yaml
 
 # Helm 명령어
 helm --help
