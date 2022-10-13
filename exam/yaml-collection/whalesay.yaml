@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: whalesay
+spec:
+  completions: 10
+  backoffLimit: 6
+  template:
+    metadata:
+    spec:
+      containers:
+      - image: docker/whalesay
+        name: whalesay
+        command: ["/bin/sh", "-c", "cowsay I am going to ace CKAD!"]
+        resources: {}
+      restartPolicy: Never
+status: {}
