@@ -8,7 +8,7 @@ k describe nginx1401 -n dev1401
 
 k get nginx1401 -n dev1401 -o yaml > nginx1401.yaml
 
-k delete nginx1401 -n dev1401 --force --grace-period 0
+k delete po nginx1401 -n dev1401 --force --grace-period 0
 
 ...
 readinessProbe:

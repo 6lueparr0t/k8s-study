@@ -41,6 +41,7 @@ k run time-check --image=busybox --dry-run=client -o yaml > pod.yaml
 
 
 k rollout history deployment [deployment-name]
+k set image deploy [deployment-name] [name]=[image]:[version]
 k rollout undo deployment [deployment-name]
 k rollout undo deployment [deployment-name] --to-revision=1
 ```
