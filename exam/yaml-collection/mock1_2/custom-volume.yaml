@@ -1,0 +1,12 @@
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+ name: custom-volume
+spec:
+ accessModes: ["ReadWriteMany"]
+ capacity:
+   storage: 50Mi
+ persistentVolumeReclaimPolicy: Retain
+ hostPath:
+   path: /opt/data​
