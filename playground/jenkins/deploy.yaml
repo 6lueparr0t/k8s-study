@@ -1,3 +1,4 @@
+# https://www.jenkins.io/doc/book/installing/kubernetes/
 apiVersion: apps/v1
 kind: Deployment
 metadata:
