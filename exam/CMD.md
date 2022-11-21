@@ -74,6 +74,10 @@ helm uninstall [name]
 
 helm pull --untar [helm-charts] #다운로드 후 압축 풀기
 helm install [name] . # value.yaml 설정 후 helm-charts 띄우기
+
+# Helm 설치 예제
+chart=jenkinsci/jenkins
+helm install jenkins -n jenkins -f jenkins-values.yaml $chart
 ```
 
 ## Reference
