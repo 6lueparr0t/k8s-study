@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: registry-svc
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: registry
+  type: LoadBalancer
+  externalIPs:
+  - <IP주소>
