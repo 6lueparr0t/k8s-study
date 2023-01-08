@@ -37,8 +37,11 @@ k run my-busybox --image=busybox --dry-run=client -o yaml > my-busybox.yaml
 
 # ---
 
+
 # Ingress 생성 시, 포트 확인
 k get svc
+k create ingress ingress-vh-routing --rule="watch.ecom-store.com/video*=video-service:8080" --rule="apparels.ecom-store.com/wear*=apparels-service:8080"
+# 수정하여 nginx.ingress.kubernetes.io/rewrite-target: / 추가
 
 # ---
 k logs dev-pod-dind-878516 -c log-x
