@@ -80,6 +80,9 @@ chart=jenkinsci/jenkins
 helm install jenkins -n jenkins -f jenkins-values.yaml $chart
 ```
 
+# Condition Check
+kubectl wait pods -l <label-key>=<label-name> --for condition=Ready --timeout=90s
+
 ## Reference
 - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 - https://www.studytonight.com/post/how-to-list-all-resources-in-a-kubernetes-namespace
