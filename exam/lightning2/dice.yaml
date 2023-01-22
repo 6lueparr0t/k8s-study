@@ -3,12 +3,12 @@ kind: CronJob
 metadata:
   name: dice
 spec:
+  schedule: '*/1 * * * *'
   jobTemplate:
     metadata:
       name: dice
     spec:
       template:
-        metadata:
         spec:
           containers:
           - image: kodekloud/throw-dice
@@ -17,4 +17,3 @@ spec:
       completions: 1
       backoffLimit: 25
       activeDeadlineSeconds: 20
-  schedule: '*/1 * * * *'
