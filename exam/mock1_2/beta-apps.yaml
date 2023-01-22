@@ -23,7 +23,7 @@ spec:
                 values: ["beta"]
                 operator: In
       containers:
-      - name: nginx​
+      - name: nginx
         image: nginx
         resources:
           requests:

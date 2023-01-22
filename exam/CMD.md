@@ -60,6 +60,7 @@ k label node controlplane app_type=beta
 k create ingress ingress --rule="ckad-mock-exam-solution.com/video*=my-video-service:8080" --dry-run=client -o yaml > ingress.yaml
 k replace -f pod-with-rprobe.yaml --force
 k create job --image=docker/whalesay whalesay --dry-run=client -o yaml
+k explain RESOURCE --recursive | vim -
 
 # Helm 명령어
 helm --help

@@ -16,4 +16,4 @@ spec:
     name: sonic
     env:
     - name: NGINX_PORT
-      value: "8080"
+      value: "8080" # double quotation
