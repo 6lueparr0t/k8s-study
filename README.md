@@ -36,7 +36,11 @@ alias kp='k get pods'
 
 export do="--dry-run=client -o yaml"
 
-alias kcmd='k run tmp --restart=Never --rm -i --image=nginx:alpine -- curl -m 5'
+# alias kcmd='k run tmp --restart=Never --rm -i --image=nginx:alpine -- curl -m 5'
+export kcmd='k run tmp --restart=Never --rm -i --image=nginx:alpine'
+# example) $kcmd -n <namespace> -- curl -m 2 http://<hostname>:<port>
+# example) $kcmd -n <namespace> -- wget -O- -T 2 http://<hostname>:<port>
+
 export now="--force --grace-period 0"
 ```
 
