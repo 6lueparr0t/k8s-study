@@ -64,7 +64,7 @@ k apply -f pod1.yaml
 
 ## Q 03 : Task weight: <code>2%</code>
 
-Team Neptune needs a Job template located at <code>/opt/course/3/job.yaml</code>. This Job should run image <code>busybox:1.31.0</code> and execute <code>sleep 2 && echo done.</code> It should be in namespace <code>neptune**, run a total of 3 times and should execute 2 runs in parallel.
+Team Neptune needs a Job template located at <code>/opt/course/3/job.yaml</code>. This Job should run image <code>busybox:1.31.0</code> and execute <code>sleep 2 && echo done.</code> It should be in namespace <code>neptune</code>, run a total of 3 times and should execute 2 runs in parallel.
 
 Start the Job and check its history. Each pod created by the Job should have the label <code>id: awesome-job</code>. The job should be named <code>neb-new-job</code> and the container <code>neb-new-job-container</code>.
 
@@ -104,9 +104,9 @@ status: {}
 
 ## Q 04 : Task weight: <code>5%</code>
 
-Team Mercury asked you to perform some operations using Helm, all in Namespace <code>mercury**:
+Team Mercury asked you to perform some operations using Helm, all in Namespace <code>mercury</code>:
 
-Delete release <code>internal-issue-report-apiv1**
+Delete release <code>internal-issue-report-apiv1</code>
 Upgrade release <code>internal-issue-report-apiv2</code> to any newer version of chart <code>bitnami/nginx</code> available
 Install a new release <code>internal-issue-report-apache</code> of chart <code>bitnami/apache</code>. The Deployment should have two replicas, set these via Helm-values during install
 There seems to be a broken release, stuck in pending-install state. Find it and delete it
@@ -208,9 +208,9 @@ status: {}
 
 ## Q 07 : Task weight: <code>4%</code>
 
-The board of Team Neptune decided to take over control of one e-commerce webserver from Team Saturn. The administrator who once setup this webserver is not part of the organisation any longer. All information you could get was that the e-commerce system is called **my-happy-shop**.
+The board of Team Neptune decided to take over control of one e-commerce webserver from Team Saturn. The administrator who once setup this webserver is not part of the organisation any longer. All information you could get was that the e-commerce system is called <code>my-happy-shop</code>.
 
-Search for the correct Pod in Namespace **saturn** and move it to Namespace **neptune**. It doesn't matter if you shut it down and spin it up again, it probably hasn't any customers anyways.
+Search for the correct Pod in Namespace <code>saturn</code> and move it to Namespace <code>neptune</code>. It doesn't matter if you shut it down and spin it up again, it probably hasn't any customers anyways.
 
 ```bash
 ns=saturn
@@ -246,7 +246,7 @@ k apply -f my-happy-shop.yaml
 
 ## Q 08 : Task weight: <code>4%</code>
 
-There is an existing Deployment named **api-new-c32** in Namespace neptune. A developer did make an update to the Deployment but the updated version never came online. Check the Deployment history and find a revision that works, then rollback to it. Could you tell Team Neptune what the error was so it doesn't happen again?
+There is an existing Deployment named <code>api-new-c32</code> in Namespace neptune. A developer did make an update to the Deployment but the updated version never came online. Check the Deployment history and find a revision that works, then rollback to it. Could you tell Team Neptune what the error was so it doesn't happen again?
 
 ```bash
 ns=neptune
@@ -260,11 +260,11 @@ k -n $ns rollout status deploy api-new-c32
 
 ## Q 09 : Task weight: <code>5%</code>
 
-In Namespace **pluto** there is single Pod named **holy-api**. It has been working okay for a while now but Team Pluto needs it to be more reliable. Convert the Pod into a Deployment with **3** replicas and name **holy-api**. The raw Pod template file is available at **/opt/course/9/holy-api-pod.yaml**.
+In Namespace <code>pluto</code> there is single Pod named <code>holy-api</code>. It has been working okay for a while now but Team Pluto needs it to be more reliable. Convert the Pod into a Deployment with <code>3</code> replicas and name <code>holy-api</code>. The raw Pod template file is available at <code>/opt/course/9/holy-api-pod.yaml</code>.
 
-In addition, the new Deployment should set **allowPrivilegeEscalation: false** and **privileged: false** for the security context on container level.
+In addition, the new Deployment should set <code>allowPrivilegeEscalation: false</code> and <code>privileged: false</code> for the security context on container level.
 
-Please create the Deployment and save its yaml under **/opt/course/9/holy-api-deployment.yaml**.
+Please create the Deployment and save its yaml under <code>/opt/course/9/holy-api-deployment.yaml</code>.
 
 ```yaml
 # holy-api pod
@@ -363,9 +363,9 @@ k -n $ns apply -f holy-api-deployment.yaml
 
 ## Q 10 - Task weight: <code>4%</code>
 
-Team Pluto needs a new cluster internal Service. Create a ClusterIP Service named **project-plt-6cc-svc** in Namespace **pluto**. This Service should expose a single Pod named **project-plt-6cc-api** of image **nginx:1.17.3-alpine**, create that Pod as well. The Pod should be identified by label **project: plt-6cc-api**. The Service should use tcp port redirection of **3333:80**.
+Team Pluto needs a new cluster internal Service. Create a ClusterIP Service named <code>project-plt-6cc-svc</code> in Namespace <code>pluto</code>. This Service should expose a single Pod named <code>project-plt-6cc-api</code> of image <code>nginx:1.17.3-alpine</code>, create that Pod as well. The Pod should be identified by label <code>project: plt-6cc-api</code>. The Service should use tcp port redirection of <code>3333:80</code>.
 
-Finally use for example curl from a temporary **nginx:alpine** Pod to get the response from the Service. Write the response into **/opt/course/10/service_test.html**. Also check if the logs of Pod **project-plt-6cc-api** show the request and write those into **/opt/course/10/service_test.log**.
+Finally use for example curl from a temporary <code>nginx:alpine</code> Pod to get the response from the Service. Write the response into <code>/opt/course/10/service_test.html</code>. Also check if the logs of Pod <code>project-plt-6cc-api</code> show the request and write those into <code>/opt/course/10/service_test.log</code>.
 
 ```bash
 ns=pluto
@@ -427,15 +427,15 @@ k -n $ns logs project-plt-6cc-api > /opt/course/10/service_test.log
 
 ## Q 11 - Task weight: <code>7%</code>
 
-During the last monthly meeting you mentioned your strong expertise in container technology. Now the Build&Release team of department Sun is in need of your insight knowledge. There are files to build a container image located at **/opt/course/11/image**. The container will run a Golang application which outputs information to stdout. You're asked to perform the following tasks:
+During the last monthly meeting you mentioned your strong expertise in container technology. Now the Build&Release team of department Sun is in need of your insight knowledge. There are files to build a container image located at <code>/opt/course/11/image</code>. The container will run a Golang application which outputs information to stdout. You're asked to perform the following tasks:
 
-> NOTE: Make sure to run all commands as user **k8s**, for docker use **sudo docker**
+> NOTE: Make sure to run all commands as user <code>k8s</code>, for docker use <code>sudo docker</code>
 
-1. Change the Dockerfile. The value of the environment variable SUN_CIPHER_ID should be set to the hardcoded value **5b9c1065-e39d-4a43-a04a-e59bcea3e03f**
-2. Build the image using Docker, named **registry.killer.sh:5000/sun-cipher**, tagged as **latest** and **v1-docker**, push these to the registry
-3. Build the image using Podman, named **registry.killer.sh:5000/sun-cipher**, tagged as **v1-podman**, push it to the registry
-4. Run a container using Podman, which keeps running in the background, named **sun-cipher** using image **registry.killer.sh:5000/sun-cipher:v1-podman**. Run the container from k8s@terminal and not root@terminal
-5. Write the logs your container sun-cipher produced into **/opt/course/11/logs**. Then write a list of all running Podman containers into **/opt/course/11/containers**
+1. Change the Dockerfile. The value of the environment variable SUN_CIPHER_ID should be set to the hardcoded value <code>5b9c1065-e39d-4a43-a04a-e59bcea3e03f</code>
+2. Build the image using Docker, named <code>registry.killer.sh:5000/sun-cipher</code>, tagged as <code>latest</code> and <code>v1-docker</code>, push these to the registry
+3. Build the image using Podman, named <code>registry.killer.sh:5000/sun-cipher</code>, tagged as <code>v1-podman</code>, push it to the registry
+4. Run a container using Podman, which keeps running in the background, named <code>sun-cipher</code> using image <code>registry.killer.sh:5000/sun-cipher:v1-podman</code>. Run the container from k8s@terminal and not root@terminal
+5. Write the logs your container sun-cipher produced into <code>/opt/course/11/logs</code>. Then write a list of all running Podman containers into <code>/opt/course/11/containers</code>
 
 ```Dockerfile
 #1
@@ -482,11 +482,11 @@ podman logs sun-cipher > /opt/course/11/logs
 
 ## Q 12 - Task weight: <code>8%</code>
 
-Create a new PersistentVolume named **earth-project-earthflower-pv**. It should have a capacity of **2Gi**, accessMode **ReadWriteOnce**, hostPath **/Volumes/Data** and **no storageClassName** defined.
+Create a new PersistentVolume named <code>earth-project-earthflower-pv</code>. It should have a capacity of <code>2Gi</code>, accessMode <code>ReadWriteOnce</code>, hostPath <code>/Volumes/Data</code> and <code>no storageClassName</code> defined.
 
-Next create a new PersistentVolumeClaim in Namespace **earth** named **earth-project-earthflower-pvc**. It should request **2Gi** storage, accessMode **ReadWriteOnce** and should not define a storageClassName. The PVC should bound to the PV correctly.
+Next create a new PersistentVolumeClaim in Namespace <code>earth</code> named <code>earth-project-earthflower-pvc</code>. It should request <code>2Gi</code> storage, accessMode <code>ReadWriteOnce</code> and should not define a storageClassName. The PVC should bound to the PV correctly.
 
-Finally create a new Deployment **project-earthflower** in Namespace **earth** which mounts that volume at **/tmp/project-data**. The Pods of that Deployment should be of image **httpd:2.4.41-alpine**.
+Finally create a new Deployment <code>project-earthflower</code> in Namespace <code>earth</code> which mounts that volume at <code>/tmp/project-data</code>. The Pods of that Deployment should be of image <code>httpd:2.4.41-alpine</code>.
 
 ```yaml
 # 12_pv.yaml
@@ -557,9 +557,9 @@ spec:
 
 ## Q 13 - Task weight: <code>6%</code>
 
-Team Moonpie, which has the Namespace **moon**, needs more storage. Create a new PersistentVolumeClaim named **moon-pvc-126** in that namespace. This claim should use a new StorageClass **moon-retain** with the provisioner set to **moon-retainer** and the reclaimPolicy set to Retain. The claim should request storage of **3Gi**, an accessMode of **ReadWriteOnce** and should use the new StorageClass.
+Team Moonpie, which has the Namespace <code>moon</code>, needs more storage. Create a new PersistentVolumeClaim named <code>moon-pvc-126</code> in that namespace. This claim should use a new StorageClass <code>moon-retain</code> with the provisioner set to <code>moon-retainer</code> and the reclaimPolicy set to Retain. The claim should request storage of <code>3Gi</code>, an accessMode of <code>ReadWriteOnce</code> and should use the new StorageClass.
 
-The provisioner **moon-retainer** will be created by another team, so it's expected that the PVC will not boot yet. Confirm this by writing the log message from the PVC into file **/opt/course/13/pvc-126-reason**.
+The provisioner <code>moon-retainer</code> will be created by another team, so it's expected that the PVC will not boot yet. Confirm this by writing the log message from the PVC into file <code>/opt/course/13/pvc-126-reason</code>.
 
 ```yaml
 # 13_sc.yaml
@@ -597,9 +597,9 @@ k -n moon describe pvc moon-pvc-126
 
 ## Q 14 - Task weight: <code>4%</code>
 
-You need to make changes on an existing Pod in Namespace **moon** called **secret-handler**. Create a new Secret secret1 which contains **user=test** and **pass=pwd**. The Secret's content should be available in Pod **secret-handler** as environment variables **SECRET1_USER** and **SECRET1_PASS**. The yaml for Pod **secret-handler** is available at **/opt/course/14/secret-handler.yaml**.
+You need to make changes on an existing Pod in Namespace <code>moon</code> called <code>secret-handler</code>. Create a new Secret secret1 which contains <code>user=test</code> and <code>pass=pwd</code>. The Secret's content should be available in Pod <code>secret-handler</code> as environment variables <code>SECRET1_USER</code> and <code>SECRET1_PASS</code>. The yaml for Pod <code>secret-handler</code> is available at <code>/opt/course/14/secret-handler.yaml</code>.
 
-There is existing yaml for another Secret at **/opt/course/14/secret2.yaml**, create this Secret and mount it inside the same Pod at **/tmp/secret2**. Your changes should be saved under **/opt/course/14/secret-handler-new.yaml**. Both Secrets should only be available in Namespace **moon**.
+There is existing yaml for another Secret at <code>/opt/course/14/secret2.yaml</code>, create this Secret and mount it inside the same Pod at <code>/tmp/secret2</code>. Your changes should be saved under <code>/opt/course/14/secret-handler-new.yaml</code>. Both Secrets should only be available in Namespace <code>moon</code>.
 
 ```yaml
 # /opt/course/14/secret-handler-new.yaml
@@ -668,9 +668,9 @@ k -f /opt/course/14/secret-handler-new.yaml replace $now
 
 ## Q 15 - Task weight: <code>5%</code>
 
-Team Moonpie has a nginx server Deployment called **web-moon** in Namespace **moon**. Someone started configuring it but it was never completed. To complete please create a ConfigMap called **configmap-web-moon-html** containing the content of file **/opt/course/15/web-moon.html** under the data key-name **index.html**.
+Team Moonpie has a nginx server Deployment called <code>web-moon</code> in Namespace <code>moon</code>. Someone started configuring it but it was never completed. To complete please create a ConfigMap called <code>configmap-web-moon-html</code> containing the content of file <code>/opt/course/15/web-moon.html</code> under the data key-name <code>index.html</code>.
 
-The Deployment **web-moon** is already configured to work with this ConfigMap and serve its content. Test the nginx configuration for example using **curl** from a temporary **nginx:alpine** Pod.
+The Deployment <code>web-moon</code> is already configured to work with this ConfigMap and serve its content. Test the nginx configuration for example using <code>curl</code> from a temporary <code>nginx:alpine</code> Pod.
 
 ```bash
 ns=moon
@@ -707,11 +707,11 @@ $kcmd -n $ns -- curl 10.44.0.78
 
 ## Q 16 - Task weight: <code>6%</code>
 
-The Tech Lead of Mercury2D decided it's time for more logging, to finally fight all these missing data incidents. There is an existing container named **cleaner-con** in Deployment **cleaner** in Namespace **mercury**. This container mounts a volume and writes logs into a file called **cleaner.log**.
+The Tech Lead of Mercury2D decided it's time for more logging, to finally fight all these missing data incidents. There is an existing container named <code>cleaner-con</code> in Deployment <code>cleaner</code> in Namespace <code>mercury</code>. This container mounts a volume and writes logs into a file called <code>cleaner.log</code>.
 
-The yaml for the existing Deployment is available at **/opt/course/16/cleaner.yaml**. Persist your changes at **/opt/course/16/cleaner-new.yaml** but also make sure the Deployment is running.
+The yaml for the existing Deployment is available at <code>/opt/course/16/cleaner.yaml</code>. Persist your changes at <code>/opt/course/16/cleaner-new.yaml</code> but also make sure the Deployment is running.
 
-Create a sidecar container named **logger-con**, image **busybox:1.31.0** , which mounts the same volume and writes the content of **cleaner.log** to stdout, you can use the **tail -f** command for this. This way it can be picked up by **kubectl logs**.
+Create a sidecar container named <code>logger-con</code>, image <code>busybox:1.31.0</code> , which mounts the same volume and writes the content of <code>cleaner.log</code> to stdout, you can use the <code>tail -f</code> command for this. This way it can be picked up by <code>kubectl logs</code>.
 
 Check if the logs of the new container reveal something about the missing data incidents.
 
@@ -772,11 +772,11 @@ k -n mercury logs <cleaner-pod> -c logger-con
 
 ## Q 17 - Task weight: <code>4%</code>
 
-Last lunch you told your coworker from department Mars Inc how amazing InitContainers are. Now he would like to see one in action. There is a Deployment yaml at **/opt/course/17/test-init-container.yaml**. This Deployment spins up a single Pod of image **nginx:1.17.3-alpine** and serves files from a mounted volume, which is empty right now.
+Last lunch you told your coworker from department Mars Inc how amazing InitContainers are. Now he would like to see one in action. There is a Deployment yaml at <code>/opt/course/17/test-init-container.yaml</code>. This Deployment spins up a single Pod of image <code>nginx:1.17.3-alpine</code> and serves files from a mounted volume, which is empty right now.
 
-Create an InitContainer named **init-con** which also mounts that volume and creates a file **index.html** with content **check this out!** in the root of the mounted volume. For this test we ignore that it doesn't contain valid html.
+Create an InitContainer named <code>init-con</code> which also mounts that volume and creates a file <code>index.html</code> with content <code>check this out!</code> in the root of the mounted volume. For this test we ignore that it doesn't contain valid html.
 
-The InitContainer should be using image **busybox:1.31.0**. Test your implementation for example using **curl** from a temporary **nginx:alpine** Pod.
+The InitContainer should be using image <code>busybox:1.31.0</code>. Test your implementation for example using <code>curl</code> from a temporary <code>nginx:alpine</code> Pod.
 
 ```yaml
 # 17_test-init-container.yaml
@@ -825,9 +825,9 @@ $kcmd -- curl 10.0.0.67
 
 ## Q 18 - Task weight: <code>4%</code>
 
-There seems to be an issue in Namespace **mars** where the ClusterIP service **manager-api-svc** should make the Pods of Deployment **manager-api-deployment** available inside the cluster.
+There seems to be an issue in Namespace <code>mars</code> where the ClusterIP service <code>manager-api-svc</code> should make the Pods of Deployment <code>manager-api-deployment</code> available inside the cluster.
 
-You can test this with **curl manager-api-svc.mars:4444** from a temporary **nginx:alpine** Pod. Check for the misconfiguration and apply a fix.
+You can test this with <code>curl manager-api-svc.mars:4444</code> from a temporary <code>nginx:alpine</code> Pod. Check for the misconfiguration and apply a fix.
 
 ```bash
 ns=mars
@@ -869,9 +869,9 @@ $kcmd -n $mars -- curl -m 5 manager-api-svc:4444 # check again
 
 ## Q 19 - Task weight: <code>3%</code>
 
-In Namespace **jupiter** you'll find an apache Deployment (with one replica) named **jupiter-crew-deploy** and a ClusterIP Service called **jupiter-crew-svc** which exposes it. Change this service to a NodePort one to make it available on all nodes on port **30100**.
+In Namespace <code>jupiter</code> you'll find an apache Deployment (with one replica) named <code>jupiter-crew-deploy</code> and a ClusterIP Service called <code>jupiter-crew-svc</code> which exposes it. Change this service to a NodePort one to make it available on all nodes on port <code>30100</code>.
 
-Test the NodePort Service using the internal IP of all available nodes and the port 30100 using **curl**, you can reach the internal node IPs directly from your main terminal. On which nodes is the Service reachable? On which node is the Pod running?
+Test the NodePort Service using the internal IP of all available nodes and the port 30100 using <code>curl</code>, you can reach the internal node IPs directly from your main terminal. On which nodes is the Service reachable? On which node is the Pod running?
 
 ```bash
 ns=jupiter
@@ -914,9 +914,9 @@ curl 192.168.100.12:30100
 
 ## Q 20 - Task weight: <code>9%</code>
 
-In Namespace **venus** you'll find two Deployments named **api** and **frontend**. Both Deployments are exposed inside the cluster using Services. Create a NetworkPolicy named np1 which restricts outgoing tcp connections from Deployment **frontend** and only allows those going to Deployment **api**. Make sure the NetworkPolicy still allows outgoing traffic on UDP/TCP ports 53 for DNS resolution.
+In Namespace <code>venus</code> you'll find two Deployments named <code>api</code> and <code>frontend</code>. Both Deployments are exposed inside the cluster using Services. Create a NetworkPolicy named np1 which restricts outgoing tcp connections from Deployment <code>frontend</code> and only allows those going to Deployment <code>api</code>. Make sure the NetworkPolicy still allows outgoing traffic on UDP/TCP ports 53 for DNS resolution.
 
-Test using: **wget www.google.com** and **wget api:2222** from a Pod of Deployment frontend.
+Test using: <code>wget www.google.com</code> and <code>wget api:2222</code> from a Pod of Deployment frontend.
 
 ```bash
 ns=venus
@@ -963,9 +963,9 @@ $kcmd -n $ns -- wget -O- www.google.com
 
 ## Q 21 - Task weight: <code>4%</code>
 
-Team Neptune needs 3 Pods of image **httpd:2.4-alpine**, create a Deployment named **neptune-10ab** for this. The containers should be named **neptune-pod-10ab**. Each container should have a memory request of **20Mi** and a memory limit of **50Mi**.
+Team Neptune needs 3 Pods of image <code>httpd:2.4-alpine</code>, create a Deployment named <code>neptune-10ab</code> for this. The containers should be named <code>neptune-pod-10ab</code>. Each container should have a memory request of <code>20Mi</code> and a memory limit of <code>50Mi</code>.
 
-Team Neptune has it's own ServiceAccount **neptune-sa-v2** under which the Pods should run. The Deployment should be in Namespace **neptune**.
+Team Neptune has it's own ServiceAccount <code>neptune-sa-v2</code> under which the Pods should run. The Deployment should be in Namespace <code>neptune</code>.
 
 ```bash
 ns=neptune
@@ -1010,7 +1010,7 @@ status: {}
 
 ## Q 22 - Task weight: <code>3%</code>
 
-Team Sunny needs to identify some of their Pods in namespace **sun**. They ask you to add a new label **protected: true** to all Pods with an existing label **type: worker** or **type: runner**. Also add an annotation **protected: do not delete this pod** to all Pods having the new label **protected: true**.
+Team Sunny needs to identify some of their Pods in namespace <code>sun</code>. They ask you to add a new label <code>protected: true</code> to all Pods with an existing label <code>type: worker</code> or <code>type: runner</code>. Also add an annotation <code>protected: do not delete this pod</code> to all Pods having the new label <code>protected: true</code>.
 
 ```bash
 k -n sun get pod --show-labels
@@ -1037,9 +1037,9 @@ k -n sun get pod -l protected=true -o yaml | grep -A 8 metadata:
 
 ## Preview Question 1
 
-In Namespace **pluto** there is a Deployment named **project-23-api**. It has been working okay for a while but Team Pluto needs it to be more reliable. Implement a liveness-probe which checks the container to be reachable on port 80. Initially the probe should wait 10, periodically 15 seconds.
+In Namespace <code>pluto</code> there is a Deployment named <code>project-23-api</code>. It has been working okay for a while but Team Pluto needs it to be more reliable. Implement a liveness-probe which checks the container to be reachable on port 80. Initially the probe should wait 10, periodically 15 seconds.
 
-The original Deployment yaml is available at **/opt/course/p1/project-23-api.yaml**. Save your changes at **/opt/course/p1/project-23-api-new.yaml** and apply the changes.
+The original Deployment yaml is available at <code>/opt/course/p1/project-23-api.yaml</code>. Save your changes at <code>/opt/course/p1/project-23-api-new.yaml</code> and apply the changes.
 
 ```yaml
 # /opt/course/p1/project-23-api-new.yaml
@@ -1093,9 +1093,9 @@ spec:
 
 ## Preview Question 2
 
-Team Sun needs a new Deployment named **sunny** with 4 replicas of image **nginx:1.17.3-alpine** in Namespace **sun**. The Deployment and its Pods should use the existing ServiceAccount **sa-sun-deploy**.
+Team Sun needs a new Deployment named <code>sunny</code> with 4 replicas of image <code>nginx:1.17.3-alpine</code> in Namespace <code>sun</code>. The Deployment and its Pods should use the existing ServiceAccount <code>sa-sun-deploy</code>.
 
-Expose the Deployment internally using a ClusterIP Service named **sun-srv** on port 9999. The nginx containers should run as default on port 80. The management of Team Sun would like to execute a command to check that all Pods are running on occasion. Write that command into file **/opt/course/p2/sunny_status_command.sh**. The command should use **kubectl**.
+Expose the Deployment internally using a ClusterIP Service named <code>sun-srv</code> on port 9999. The nginx containers should run as default on port 80. The management of Team Sun would like to execute a command to check that all Pods are running on occasion. Write that command into file <code>/opt/course/p2/sunny_status_command.sh</code>. The command should use <code>kubectl</code>.
 
 ```yaml
 # p2_sunny.yaml
@@ -1151,9 +1151,9 @@ status:
 
 ## Preview Question 3
 
-Management of EarthAG recorded that one of their Services stopped working. Dirk, the administrator, left already for the long weekend. All the information they could give you is that it was located in Namespace **earth** and that it stopped working after the latest rollout. All Services of EarthAG should be reachable from inside the cluster.
+Management of EarthAG recorded that one of their Services stopped working. Dirk, the administrator, left already for the long weekend. All the information they could give you is that it was located in Namespace <code>earth</code> and that it stopped working after the latest rollout. All Services of EarthAG should be reachable from inside the cluster.
 
-Find the Service, fix any issues and confirm it's working again. Write the reason of the error into file **/opt/course/p3/ticket-654.txt** so Dirk knows what the issue was.
+Find the Service, fix any issues and confirm it's working again. Write the reason of the error into file <code>/opt/course/p3/ticket-654.txt</code> so Dirk knows what the issue was.
 
 ```yaml
 # k -n earth edit deploy earth-3cc-web
