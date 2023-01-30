@@ -14,6 +14,8 @@ export kcmd="kubectl run tmp --restart=Never --rm -i --image=nginx:alpine -- "
 # Usage
 # $kcmd -- curl -m 2 <svc>.<namespace>:<port>
 # $kcmd -- wget -O- -T 2 <svc>.<namespace>:<port>
+
+helm repo add bitnami https://chats.bitnami.com/bitnami
 ```
 
 ## Q 01 : Task weight: <code>1%</code>
@@ -123,8 +125,9 @@ helm -n $ns upgrade internal-issue-report-apiv2 bitnami/apache
 
 ```bash
 # install with customizing
-helm -n $ns pull --untar internal-issue-report-apache bitnami/apache
+helm -n $ns pull --untar bitnami/apache
 vi apache/values.yaml
+helm -n $ns install internal-issue-report-apache ./apache
 
 ## or
 
